@@ -1,17 +1,7 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import Tomato from "./components/Tomato";
 
-'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-var Entry = React.createClass({
-  render: function(){
-    return (
-      <div className="myDiv">
-        Hello testting!
-      </div>
-    )
-  }
-});
-
-ReactDOM.render(<Entry />, document.getElementById('content'));
+const app = document.getElementById('app');
+ReactDOM.render(<Tomato />,app);
