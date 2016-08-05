@@ -1,10 +1,14 @@
 const electron = require('electron')
+
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 let mainWindow
 
 function createWindow() {
-    mainWindow = new BrowserWindow({width: 400, height: 400, frame: false, transparent: true, resizable: false})
+    mainWindow = new BrowserWindow({width: 500, height: 500, frame: false, transparent: true, resizable: false, webPreferences: {
+        nodeIntegration: false
+    }})
+//fullscreen:true
 
     mainWindow.loadURL('file://' + __dirname + '/public/index.html');
     //mainWindow.webContents.openDevTools()
@@ -12,6 +16,7 @@ function createWindow() {
         mainWindow = null
     })
 }
+
 app.on('ready', createWindow)
 app.on('window-all-closed', function () {
     if (process.platform !== 'darwin') {

@@ -17,7 +17,7 @@ export default class Counter extends React.Component {
         setInterval(function () {
                 counterSeconds--;
                 totalSeconds--;
-                console.log("totalminutes" + totalMinutes + "||  Seconds" + counterSeconds + "  || totalSecs" + totalSeconds)
+                //console.log("totalminutes" + totalMinutes + "||  Seconds" + counterSeconds + "  || totalSecs" + totalSeconds)
                 document.getElementById('minutes').innerHTML = totalMinutes;
                 document.getElementById('seconds').innerHTML = counterSeconds;
                 if (counterSeconds == 0) {
@@ -25,7 +25,7 @@ export default class Counter extends React.Component {
                     counterSeconds = 60;
                 }
                 if (totalSeconds == 0) {
-                    clearInterval(counter)
+                    clearInterval(counterSeconds)
                 }
             }
             , 1000);
@@ -39,8 +39,8 @@ export default class Counter extends React.Component {
 
 
         return (
-            <div>
-                <span id="minutes"></span>:<span id="seconds"></span>
+            <div className="Counter">
+                <span id="minutes"></span> : <span id="seconds"></span>
             </div>
         )
     }

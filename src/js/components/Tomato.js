@@ -6,7 +6,7 @@ export default class Tomato extends React.Component {
         return (
             <div>
                 <img id="pomodoro" src="image/pomo.png"/>
-                <Counter minutes="2"/>
+                <Counter  minutes="25"/>
             </div>
         )
     }
