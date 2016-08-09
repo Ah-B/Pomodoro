@@ -23,6 +23,8 @@
     "start": "./node_modules/.bin/webpack-dev-server | ./node_modules/.bin/electron . --enable-transparent-visuals --disable-gpu",
     "web": "./node_modules/.bin/webpack-dev-server",
     "electron-rebuild": "./node_modules/.bin/electron-rebuild"
+  },
+  "dependencies": {
+    "materialize-css": "^0.97.7"
   }
-
 }
