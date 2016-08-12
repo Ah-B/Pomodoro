@@ -25,6 +25,6 @@
     "electron-rebuild": "./node_modules/.bin/electron-rebuild"
   },
   "dependencies": {
-    "materialize-css": "^0.97.7"
+
   }
 }

@@ -5,13 +5,13 @@ const BrowserWindow = electron.BrowserWindow
 let mainWindow
 
 function createWindow() {
-    mainWindow = new BrowserWindow({width: 500, height: 500, frame: false, transparent: true, resizable: false, webPreferences: {
-        nodeIntegration: false
-    }})
-//fullscreen:true
+    mainWindow = new BrowserWindow({
+        width: 500, height: 500, frame: false, transparent: true, resizable: false, webPreferences: {
+            nodeIntegration: false
+        }
+    })
 
     mainWindow.loadURL('file://' + __dirname + '/public/index.html');
-    //mainWindow.webContents.openDevTools()
     mainWindow.on('closed', function () {
         mainWindow = null
     })

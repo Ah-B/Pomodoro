@@ -83,10 +83,15 @@ export default class Counter extends React.Component {
     render() {
 
         return (
-            <div>{this.state.minutesRemaining}: {this.state.secondsCount}
-                <button onClick={this.pauseTimer.bind(this)}>pause</button>
-                <button onClick={this.stopTimer.bind(this)}>stop</button>
+            <div>
+                <div className="Counter">
+                    <span id="minutes">{this.state.minutesRemaining} </span>
+                    <span id="delimitier"> : </span>
+                    <span id="seconds">{this.state.secondsCount}</span>
+                </div>
                 <button onClick={this.startTimer.bind(this)}>start</button>
+                <button onClick={this.pauseTimer.bind(this)}>Pause</button>
+                <button onClick={this.stopTimer.bind(this)}>stop</button>
                 <button onClick={this.modeToggle.bind(this)}>mode</button>
             </div>
         )

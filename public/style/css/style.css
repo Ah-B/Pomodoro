@@ -1,27 +1,44 @@
-
 @font-face {
     font-family: digitalFont;
-    src: url("digital-7.ttf");
+    src: url("../fonts/digital-7.ttf");
 }
 
-.Counter{
+.Counter {
     font-family: digitalFont;
-    position: absolute;
     font-size: 80px;
-    left: 52px;
-    top: 210px;
     color: #9DC13B;
+}
+
+#minutes {
+    position: absolute;
+    padding-left: 8px;
+    left: 55px;
+    top: 210px;
+}
+
+#seconds {
+    position: absolute;
+    left: 180px;
+    top: 210px;
+}
+
+#delimitier {
+    position: absolute;
+    left: 152px;
+    top: 210px;
 }
 
 #pomodoro {
     width: 300px;
     height: 300px;
 }
-#eyes{
+
+#eyes {
     position: absolute;
     z-index: 1;
-    top:55px;
+    top: 55px;
 }
+
 .eyeball {
     position: absolute;
     top: 0px;
@@ -40,21 +57,14 @@
 
 }
 
-#left_eyball{
+#left_eyball {
     z-index: 2;
-    top:29px;
+    top: 29px;
     left: 102px;
 }
-#right_eyball{
-    top:-21px;
+
+#right_eyball {
+    top: -21px;
     left: 152px;
-
 }
 
-#button-start{
-    background-color: #9DC13B;
-}
-#button-stop{
-
-    background-color: #9DC13B;
-}
