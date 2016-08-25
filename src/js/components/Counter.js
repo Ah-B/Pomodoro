@@ -7,29 +7,29 @@ export default class Counter extends React.Component {
             work: true,
             secondsRemaining: 0,
             minutesRemaining: 0,
-            secondsCount: 60
+            secondsCount: 59
+
         }
     }
 
     tick() {
-        if (this.state.secondsCount <= 0) {
-            this.setState({secondsCount: 60, minutesRemaining: this.state.minutesRemaining - 1})
-        }
+        console.log(this.state.secondsCount + "*****" + this.state.secondsRemaining);
         this.setState({secondsRemaining: this.state.secondsRemaining - 1});
         this.setState({secondsCount: this.state.secondsCount - 1});
+
+        if (this.state.secondsCount < 0) {
+            this.setState({
+                secondsCount: 59,
+                secondsRemaining: this.state.secondsRemaining - 60,
+                minutesRemaining: this.state.minutesRemaining - 1
+            })
+        }
         if (this.state.secondsRemaining <= 0) {
             clearInterval(this.interval);
+            this.setState({minutesRemaining: 0, secondsCounter: 0})
+
         }
-        if (this.state.secondsRemaining % 60 === 0) {
-            this.setState({minutesRemaining: this.state.minutesRemaining - 1});
-            this.setState({secondsCount: 59});
-        }
-        if (this.state.minutesRemaining <= 0 && this.state.secondsRemaining <= 0) {
-            clearInterval(this.interval);
-            this.setUp();
-            this.setState({minutesRemaining: 0})
-            console.log(this.state)
-        }
+
     }
 
     setUp() {
@@ -37,8 +37,8 @@ export default class Counter extends React.Component {
         var seconds = minutes * 60;
 
         this.setState({secondsRemaining: seconds});
-        this.setState({minutesRemaining: minutes});
-        this.setState({secondsCount: 0});
+        this.setState({minutesRemaining: minutes - 1});
+        this.setState({secondsCount: 59});
     }
 
     componentDidMount() {
